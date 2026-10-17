@@ -1,3 +1,8 @@
+#Check the secret in databricks
+secret_value = dbutils.secrets.get(scope="instacart-akv-scope", key="client-secret")
+print(secret_value)
+dbutils.secrets.listScopes()
+
 # Connection from databricks to Azure Data Lake
 spark.conf.set("fs.azure.account.auth.type.stinstacartlake:dfs.core.windows.net", "OAuth")
 spark.conf.set("fs.azure.account.oauth.provider.type.stinstacartlake.dfs.core.windows.net", "org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider")
