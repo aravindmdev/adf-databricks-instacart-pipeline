@@ -1,16 +1,16 @@
 File_Name, Column_Name, Data_Type, Description
-
+,,,
 aisles.csv, aisle_id, Integer, "The unique identifier key for each aisle"
 aisles.csv, aisle, String , "The name or textual description of the grocery category"
-
+,,,
 departments.csv, department_id, Integer, "The unique identifier key for each department"
 departments.csv, department, String, "The name or textual description of the broad category"
-
+,,,
 order_products__prior.csv, order_id, Integer, "The unique ID of the grocery order"
 order_products__prior.csv, product_id, Integer, "The unique ID of the product purchased"
 order_products__prior.csv, add_to_cart_order, Integer, "The exact sequence in which the user added the item to their cart (e.g., 1 means it was the first item clicked)"
-order_products__prior.csv, reordered, Binary (0 or 1),	"1 if the user has bought this specific item at least once before in their history; 0 if it is their first time buying it"
-
+order_products__prior.csv, reordered, Binary, "1 if the user has bought this specific item at least once before in their history 0 if it is their first time buying it"
+,,,
 orders.csv, order_id, Integer, "Unique identifier key for each distinct grocery basket (Primary Key)"
 orders.csv, user_id, Integer, "Unique identifier tracking an individual customer"
 orders.csv, eval_set, String, "Denotes which cohort this order record belongs to: prior (historical rows), train (ground truth validation rows), or test (evaluation rows)"
@@ -18,9 +18,8 @@ orders.csv, order_number, Integer, "The sequential order placement count for tha
 orders.csv, order_dow, Integer, "Day of the week the transaction occurred (0 to 6, mapping usually to Sunday–Saturday)"
 orders.csv, order_hour_of_day, Integer, "The 24-hour timestamp of when the order was submitted"
 orders.csv, days_since_prior_order, Float / Integer, "The precise number of days that elapsed since the user's previous order. (This column will show NaN or be blank for a customer's very first order, where order_number = 1)"
-
+,,,
 products.csv, product_id, Integer, "Unique identifier key for each product (Primary Key)"
 products.csv, product_name, String, "The specific name of the grocery item"
 products.csv, aisle_id, Integer, "Foreign key connecting the item to its designated aisle in aisles.csv"
 products.csv, department_id, Integer, "Foreign key connecting the item to its top-level department in departments.csv"
-
